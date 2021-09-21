@@ -1,16 +1,12 @@
-<h1>Northern posts</h1>
+<div class="container">
+  <h1>Northern posts</h1>
 
-<%= simple_form_for @post do |f| %>
-  <%= f.input :title %>
-  <%= f.input :body %>
-  <%= f.submit %>
-<% end %>
+  <%= render 'posts/form', post: @post %>
 
-<div id="posts">
-  <% @posts.each do |p| %>
-    <%= render 'posts/post', post: p %>
-  <% end %>
+  <div id="posts">
+    <%= render @posts %>
+  </div>
+
+
+  <%= turbo_stream_from :posts %>
 </div>
-
-
-<%= turbo_stream_from :posts %>

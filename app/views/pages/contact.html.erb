@@ -1,2 +1,7 @@
-<h1>Hello</h1>
-<%= link_to 'Back to home', root_path  %>
+<h1>Hello. I don't want to change this</h1>
+
+<%= turbo_frame_tag 'batata' do %>
+  <h2>I want to change this part</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum soluta dignissimos rerum voluptate repellat facilis, fuga quaerat laborum suscipit exercitationem maiores totam. Similique totam dolorum modi dolore ex? Voluptate, ratione?</p>
+  <%= link_to 'go to about', about_path %>
+<% end %>
