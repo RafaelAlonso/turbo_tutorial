@@ -1,3 +1,16 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to 'go to contact', contact_path  %>
+<h1>Northern posts</h1>
+
+<%= simple_form_for @post do |f| %>
+  <%= f.input :title %>
+  <%= f.input :body %>
+  <%= f.submit %>
+<% end %>
+
+<div id="posts">
+  <% @posts.each do |p| %>
+    <%= render 'posts/post', post: p %>
+  <% end %>
+</div>
+
+
+<%= turbo_stream_from :posts %>
